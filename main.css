@@ -16,6 +16,14 @@ html, body {
         background-color: #000;
     }
 }
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.overlay-container {
+
+}
 
 .container {
     background: url('http://www.gotnlc.com/uploads/1/0/2/4/10249757/background-images/2091356708.gif');
@@ -25,8 +33,11 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 90%;
+    height: 100%;
     padding: 5% 15%;
+}
+.container.mobi {
+    padding: 5%;
 }
 
 .document {
