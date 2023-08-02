@@ -23,22 +23,21 @@ switch (mobicheck()) {
         break;
 }
 
+function leave() {
+    $('.overlay').removeClass('go')
+    $('.overlay-container').removeClass('lapt')
+    $('.leave').off('click', leave)
+}
+
 function goaway(link, docname) {
     console.log('leaving site, preparing.');
     $('.overlay').addClass('go')
     $('.overlay-container').addClass('lapt')
-    $('.i-guess').attr('href', link)
-    $('.doc-name')
-        .text(docname)
+    $('.doc-name').text(docname)
+    $('.leave').on('click', leave)
     setTimeout(() => {
-        window.location.href = `googledocs://${link}`
+        window.location.href = link
     }, 1500)
-}
-
-
-
-function followlink(link, name) {
-    
 }
 
 const docarray = document.querySelectorAll(".document");
@@ -51,3 +50,17 @@ docarray.forEach((e) => {
         goaway(clickable, docname)
     })
 })
+
+const remarks = [
+    'I WOKE UP IN A NEW BUGATTI',
+    'erm what the flip',
+    'can i get a yellow baber',
+    'WHAT',
+    'con yay west',
+    "i don't speak italics",
+    'made w ❤️ by <img src="assets/MM.svg" style="margin-left:1px;height: 1rem">',
+    'my water bottle has my logo on it',
+    'gua gua'
+]
+
+$('.sub').html(remarks[Math.floor(Math.random() * remarks.length)])

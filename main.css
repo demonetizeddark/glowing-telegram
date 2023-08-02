@@ -134,12 +134,11 @@ html, body {
     font-size: 24px;
     font-weight: 600;
 }
-.if-not {
+.leave {
+    height: 3vh;
     position: absolute;
-    bottom: 2.5%;
-}
-.i-guess {
-    text-decoration: underline;
+    top: 2%;
+    right: 2%;
 }
 
 .container {
@@ -155,6 +154,15 @@ html, body {
 }
 .container.mobi {
     padding: 5%;
+}
+
+.sub {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
 }
 
 .document {
