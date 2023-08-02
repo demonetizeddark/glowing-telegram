@@ -1,7 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* @keyframes load {
+    0% {
+        transform: rotate(0deg)
+    }
+    25% {
+        transform: rotate(90deg)
+    }
+    50% {
+        transform: rotate(180deg)
+    }
+    75% {
+        transform: rotate(270deg)
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} */
+@keyframes loadl {
+    0% {
+        transform: rotate(0deg)
+    }
+    50% {
+        transform: rotate(30deg)
+    }
+    100% {
+        transform: rotate(60deg)
+    }
+}
+@keyframes loadr {
+    0% {
+        transform: rotate(0deg)
+    }
+    50% {
+        transform: rotate(-30deg)
+    }
+    100% {
+        transform: rotate(-60deg)
+    }
+}
+
+@keyframes down {
+    from {
+        transform: translateY(-50%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+@keyframes go {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 :root {
     --accent: #8cb73d;
+    --cube: cubic-bezier(.48,0,.14,1);
+    --loadingr: loadr 2s var(--cube) infinite;
+    --loadingl: loadl 2s var(--cube) infinite;
 }
 
 html, body {
@@ -9,20 +69,77 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden
+    overflow: hidden;
 }
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #000;
     }
 }
+
+.centre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .overlay {
+    display: none;
     position: absolute;
     height: 100%;
     width: 100%;
+    transition: all 0.5s ease;
+}
+.go {
+    display: flex !important;
+    background: rgba(0,0,0,0.5);
+    animation: go 1s var(--cube) 1 forwards normal;
 }
 .overlay-container {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    height: 50%;
+    width: 90%;
 
+    flex-direction: column;
+}
+.overlay-container.mobi {
+    height: 50%;
+    width: 90%;
+}
+.lapt {
+    animation: down 1s var(--cube) 1 forwards normal;
+}
+.log {
+    height: 40%;
+    width: 40%;
+    position: relative;
+}
+.overlay-img {
+    position: absolute;
+}
+.overlay-img.left {
+    animation: var(--loadingl);
+}
+.overlay-img.right {
+    animation: var(--loadingr);
+}
+
+.redirect-mess {
+    margin-top: 4vh;
+}
+.doc-name {
+    font-size: 24px;
+    font-weight: 600;
+}
+.if-not {
+    position: absolute;
+    bottom: 2.5%;
+}
+.i-guess {
+    text-decoration: underline;
 }
 
 .container {
@@ -34,7 +151,7 @@ html, body {
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    padding: 5% 15%;
+    padding: 0% 15%;
 }
 .container.mobi {
     padding: 5%;
