@@ -147,7 +147,7 @@ html, body {
 }
 
 .container {
-    background: url('http://www.gotnlc.com/uploads/1/0/2/4/10249757/background-images/2091356708.gif');
+    background: url('assets/nlc_bg.gif');
     background-position: center;
     background-size: cover;
 
