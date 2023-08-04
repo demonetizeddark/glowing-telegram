@@ -101,7 +101,9 @@ html, body {
     font-family: 'Roboto', sans-serif;
     position: relative;
     height: 50%;
-    width: 90%;
+    width: 30%;
+    min-height: 420px;
+    min-width: 490px;
 
     flex-direction: column;
 }
@@ -116,9 +118,12 @@ html, body {
     height: 40%;
     width: 40%;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 .overlay-img {
     position: absolute;
+    height: 100%;
 }
 .overlay-img.left {
     animation: var(--loadingl);
@@ -177,6 +182,13 @@ html, body {
     font-size: 1.5rem;
     text-decoration: none;
     text-align: center;
+
+    cursor: pointer;
+    transition: all 0.2s var(--cube);
+}
+.document:hover {
+    border-color: #fff;
+    color: #fff;
 }
 .document:nth-child(n+2) {
     margin-top: 5%;

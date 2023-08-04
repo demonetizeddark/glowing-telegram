@@ -60,7 +60,9 @@ const remarks = [
     "i don't speak italics",
     'made w ❤️ by <img src="assets/MM.svg" style="margin-left:1px;height: 1rem">',
     'my water bottle has my logo on it',
-    'gua gua'
+    'jelly bean',
+    'never back down, never WHAT??',
+    "you think you're the king?"
 ]
 
 $('.sub').html(remarks[Math.floor(Math.random() * remarks.length)])
