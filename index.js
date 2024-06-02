@@ -41,8 +41,17 @@ function goaway(link, docname) {
 }
 
 const docarray = document.querySelectorAll(".document");
+const tarray = document.querySelectorAll(".timer");
 
 docarray.forEach((e) => {
+    let clickable = e.dataset.link
+    let docname = $(e).text()
+    e.addEventListener('click', () => {
+        // followlink(clickable, docname)
+        goaway(clickable, docname)
+    })
+})
+tarray.forEach((e) => {
     let clickable = e.dataset.link
     let docname = $(e).text()
     e.addEventListener('click', () => {

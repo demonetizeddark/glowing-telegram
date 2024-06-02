@@ -48,6 +48,17 @@
         transform: translateY(0%);
     }
 }
+@keyframes entice {
+    0%, 100% {
+        border-color: #8cb73d;
+        color: #8cb73d;
+    }
+    50% {
+        border-color: #3db74b;
+        color: #3db74b;
+    }
+}
+
 @keyframes go {
     from {
         opacity: 0;
@@ -168,6 +179,29 @@ html, body {
     text-align: center;
     color: #fff;
     font-family: 'Roboto', sans-serif;
+}
+
+.timer {
+    background: none;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    padding: 5px 0;
+
+    /* Text */
+    color: var(--accent);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    height: 5rem;
+
+    cursor: pointer;
+    transition: all 0.2s var(--cube);
+    animation: entice 2s var(--cube) infinite;
+}
+.timer:hover {
+    border-color: #fff;
+    color: #fff;
 }
 
 .document {
